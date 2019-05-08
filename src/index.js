@@ -1,6 +1,10 @@
 import '@babel/polyfill';
 import app  from './server/index.js';
 
-app.listen(3000, ()=>{
-    console.log('server in port 3000')    
-});
+async function main(){
+    await app.listen(app.get('port'));
+    console.log('server on port ', app.get('port'))
+}
+
+
+main();
